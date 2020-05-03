@@ -33,6 +33,8 @@ import Foreign.Util (renderForeignErrors) as X
 import Data.Generic.Rep (class Generic) as X
 import Control.Promise (Promise) as X
 import Control.Monad.Maybe.Trans (MaybeT(..), runMaybeT) as X
+import Control.Monad.Except (runExcept) as X
+import Control.Monad.Except.Trans (runExceptT) as X
 
 inList :: ∀ a. (List a -> List a) -> Array a -> Array a
 inList f = A.fromFoldable ∘ f ∘ L.fromFoldable

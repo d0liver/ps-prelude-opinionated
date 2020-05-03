@@ -11,6 +11,7 @@ You can edit this file as you like.
   , "generics-rep"
   , "node-process"
   , "psci-support"
+  , "transformers"
   , "unicode-prelude"
   ]
 , packages = ./packages.dhall
