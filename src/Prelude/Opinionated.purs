@@ -1,5 +1,6 @@
 module Prelude.Opinionated (
     module X
+  , errorName, errorStack, errorMessage
   , takePair, P(..)
   , inList, (<~)
 ) where
@@ -23,7 +24,11 @@ import Data.Traversable (class Foldable, class Traversable, Accum, all, and, any
 import Effect (Effect, forE, foreachE, untilE, whileE) as X
 import Effect.Aff (Aff) as X
 import Effect.Class (class MonadEffect, liftEffect) as X
-import Effect.Console (clear, error, errorShow, info, infoShow, log, logShow, time, timeEnd, timeLog, warn, warnShow) as X
+import Effect.Console (clear, errorShow, info, infoShow, log, logShow, time, timeEnd, timeLog, warn, warnShow) as X
+import Effect.Exception (Error, catchException, error, throw, throwException, try) as X
+import Data.Maybe (Maybe)
+import Effect.Exception (Error)
+import Effect.Exception as Error
 import Partial.Unsafe (unsafeCrashWith, unsafePartial, unsafePartialBecause) as X
 import Prelude (class Applicative, class Apply, class Bind, class BooleanAlgebra, class Bounded, class Category, class CommutativeRing, class Discard, class DivisionRing, class Eq, class EuclideanRing, class Field, class Functor, class HeytingAlgebra, class Monad, class Monoid, class Ord, class Ring, class Semigroup, class Semigroupoid, class Semiring, class Show, type (~>), Ordering(..), Unit, Void, absurd, add, ap, append, apply, between, bind, bottom, clamp, compare, comparing, compose, conj, const, degree, discard, disj, div, eq, flap, flip, gcd, identity, ifM, join, lcm, liftA1, liftM1, map, max, mempty, min, mod, mul, negate, not, notEq, one, otherwise, pure, recip, show, sub, top, unit, unless, unlessM, void, when, whenM, zero, (#), ($), ($>), (&&), (*), (*>), (+), (-), (/), (/=), (<), (<#>), (<$), (<$>), (<*), (<*>), (<<<), (<=), (<=<), (<>), (<@>), (=<<), (==), (>), (>=), (>=>), (>>=), (>>>), (||)) as X
 import Prelude.Unicode (type (⟿), (÷), (↢), (↣), (∘), (∣), (∤), (∧), (∨), (≠), (≡), (≢), (≤), (≥), (≮), (≯), (⊙), (⊛), (⊻), (⊼), (⊽), (⋅), (⋘), (⋙), (◇), (⤛), (⤜)) as X
@@ -37,6 +42,13 @@ import Control.Monad.Except (runExcept) as X
 import Control.Monad.Except.Trans (runExceptT) as X
 import Data.List.NonEmpty (NonEmptyList) as X
 import Data.Array.NonEmpty (NonEmptyArray) as X
+
+errorName :: Error -> String
+errorName = Error.name
+errorStack :: Error -> Maybe String
+errorStack = Error.stack
+errorMessage :: Error -> String
+errorMessage = Error.message
 
 inList :: ∀ a. (List a -> List a) -> Array a -> Array a
 inList f = A.fromFoldable ∘ f ∘ L.fromFoldable
