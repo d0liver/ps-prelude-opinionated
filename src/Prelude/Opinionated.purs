@@ -1,4 +1,4 @@
-module Primacy.Prelude (
+module Prelude.Opinionated (
     module X
   , takePair, P(..)
   , inList, (<~)
