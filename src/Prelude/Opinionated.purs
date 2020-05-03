@@ -13,6 +13,9 @@ import Data.List as L
 
 -- Re-exports
 import Aff.Util (affDie, affLog, die, ε) as X
+import Data.String.Regex.Unsafe (unsafeRegex) as X
+import Data.String.Regex (Regex, regex, search, match, test, replace) as X
+import Data.String.Regex.Flags (RegexFlags, noFlags, global) as X
 import Data.Either (Either(..), choose, either, fromLeft, fromRight, hush, isLeft, isRight, note, note') as X
 import Data.Foldable (findMap, foldM, indexl, indexr, length, null, oneOfMap, surround, surroundMap) as X
 import Data.List (List) as X
