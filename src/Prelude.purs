@@ -35,6 +35,8 @@ import Control.Promise (Promise) as X
 import Control.Monad.Maybe.Trans (MaybeT(..), runMaybeT) as X
 import Control.Monad.Except (runExcept) as X
 import Control.Monad.Except.Trans (runExceptT) as X
+import Data.List.NonEmpty (NonEmptyList) as X
+import Data.Array.NonEmpty (NonEmptyArray) as X
 
 inList :: ∀ a. (List a -> List a) -> Array a -> Array a
 inList f = A.fromFoldable ∘ f ∘ L.fromFoldable
