@@ -1,4 +1,4 @@
-module Array.Util (
+module Prelude.Opinionated.Array.Util (
   (:>), (<:)
 ) where
 

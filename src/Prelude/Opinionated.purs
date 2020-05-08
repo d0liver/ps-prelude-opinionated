@@ -12,7 +12,7 @@ import Data.List (List)
 import Data.List as L
 
 -- Re-exports
-import Aff.Util (affDie, affLog, die, ε) as X
+import Prelude.Opinionated.Aff.Util (affDie, affLog, die, ε) as X
 import Data.String.Regex.Unsafe (unsafeRegex) as X
 import Data.String.Regex (Regex, regex, search, match, test, replace) as X
 import Data.String.Regex.Flags (RegexFlags, noFlags, global) as X
@@ -20,9 +20,9 @@ import Data.Either (Either(..), choose, either, fromLeft, fromRight, hush, isLef
 import Data.Foldable (findMap, foldM, indexl, indexr, length, null, oneOfMap, surround, surroundMap) as X
 import Data.List (List) as X
 import Data.Maybe (Maybe(..), fromJust, fromMaybe, fromMaybe', isJust, isNothing, maybe, maybe', optional) as X
-import Maybe.Util (whenNothing, whenJust, whenJustM, whenNothingM) as X
-import Either.Util (prefixLeft, whenLeft) as X
-import Array.Util ((:>), (<:)) as X
+import Prelude.Opinionated.Maybe.Util (whenNothing, whenJust, whenJustM, whenNothingM) as X
+import Prelude.Opinionated.Either.Util (prefixLeft, whenLeft) as X
+import Prelude.Opinionated.Array.Util ((:>), (<:)) as X
 import Data.Traversable (class Foldable, class Traversable, Accum, all, and, any, elem, find, fold, foldMap, foldMapDefaultL, foldMapDefaultR, foldl, foldlDefault, foldr, foldrDefault, for, for_, intercalate, mapAccumL, mapAccumR, maximum, maximumBy, minimum, minimumBy, notElem, oneOf, or, product, scanl, scanr, sequence, sequenceDefault, sequence_, sum, traverse, traverseDefault, traverse_) as X
 import Effect (Effect, forE, foreachE, untilE, whileE) as X
 import Effect.Aff (Aff) as X
@@ -37,7 +37,7 @@ import Prelude (class Applicative, class Apply, class Bind, class BooleanAlgebra
 import Prelude.Unicode (type (⟿), (÷), (↢), (↣), (∘), (∣), (∤), (∧), (∨), (≠), (≡), (≢), (≤), (≥), (≮), (≯), (⊙), (⊛), (⊻), (⊼), (⊽), (⋅), (⋘), (⋙), (◇), (⤛), (⤜)) as X
 import Foreign (MultipleErrors, fail, isArray, isNull, isUndefined, readArray, readBoolean, readChar, readInt, readNull, readNullOrUndefined, readNumber, readString, readUndefined, renderForeignError, tagOf, typeOf, unsafeFromForeign, unsafeReadTagged, unsafeToForeign) as X
 import Foreign.Generic (class Decode, class Encode, class GenericDecode, class GenericEncode, F, Foreign, ForeignError(..), Options, SumEncoding(..), decode, decodeJSON, defaultOptions, encode, encodeJSON, genericDecode, genericDecodeJSON, genericEncode, genericEncodeJSON) as X
-import Foreign.Util (renderForeignErrors) as X
+import Prelude.Opinionated.Foreign.Util (renderForeignErrors) as X
 import Data.Generic.Rep (class Generic) as X
 import Control.Promise (Promise) as X
 import Control.Monad.Maybe.Trans (MaybeT(..), runMaybeT) as X

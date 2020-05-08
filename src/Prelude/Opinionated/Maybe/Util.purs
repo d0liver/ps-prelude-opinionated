@@ -1,4 +1,4 @@
-module Maybe.Util (
+module Prelude.Opinionated.Maybe.Util (
   whenJust, whenNothing,
   whenJustM, whenNothingM
 ) where

@@ -1,4 +1,4 @@
-module Either.Util where
+module Prelude.Opinionated.Either.Util where
 
 import Prelude
 import Data.Either (Either(..), either)

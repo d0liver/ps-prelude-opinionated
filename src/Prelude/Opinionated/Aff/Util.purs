@@ -1,4 +1,4 @@
-module Aff.Util where
+module Prelude.Opinionated.Aff.Util where
 
 -- We can't depend on Primacy.Prelude here because this module is included in
 -- the prelude
