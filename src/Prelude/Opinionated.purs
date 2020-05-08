@@ -12,6 +12,7 @@ import Data.List (List)
 import Data.List as L
 
 -- Re-exports
+import Data.Tuple (Tuple(..), fst, snd) as X
 import Prelude.Opinionated.Aff.Util (affDie, affLog, die, ε) as X
 import Data.String.Regex.Unsafe (unsafeRegex) as X
 import Data.String.Regex (Regex, regex, search, match, test, replace) as X
