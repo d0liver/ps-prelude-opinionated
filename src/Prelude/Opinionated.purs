@@ -1,4 +1,6 @@
-module Prelude.Opinionated (module X) where
+module Prelude.Opinionated (module X, (∘)) where
+
+import Prelude
 
 -- Re-exports
 import Data.Tuple (Tuple(..) , fst , snd) as X
@@ -300,6 +302,7 @@ import Data.Tuple (Tuple(..))
 
 infix 6 type Tuple as ~
 infix 6 Tuple as ~
+infixr 9 compose as ∘
 
 -- Reminder: It's convenient to ctrl-] to other operators directly to see their
 -- precedence without leaving the editor
