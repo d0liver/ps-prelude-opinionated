@@ -8,7 +8,6 @@ You can edit this file as you like.
   , "console"
   , "effect"
   , "foreign-generic"
-  , "generics-rep"
   , "node-process"
   , "psci-support"
   , "transformers"

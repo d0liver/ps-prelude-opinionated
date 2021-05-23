@@ -89,7 +89,6 @@ import Data.Traversable
   , notElem
   , oneOf
   , or
-  , product
   , scanl
   , scanr
   , sequence
@@ -133,7 +132,6 @@ import Effect.Exception
 import Partial.Unsafe
   ( unsafeCrashWith
   , unsafePartial
-  , unsafePartialBecause
   )
   as X
 import Prelude
